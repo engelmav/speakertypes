@@ -1,1 +1,730 @@
-test
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Subwoofer Design Comparison</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        
+        h1 {
+            color: #2d3748;
+            text-align: center;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #718096;
+            margin-bottom: 40px;
+            font-style: italic;
+        }
+        
+        .speaker-card {
+            background: #f7fafc;
+            border-left: 5px solid #667eea;
+            padding: 25px;
+            margin-bottom: 25px;
+            border-radius: 8px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        
+        .speaker-card:hover {
+            transform: translateX(5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .speaker-name {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        
+        .section {
+            margin-bottom: 15px;
+        }
+        
+        .section-title {
+            color: #2d3748;
+            font-weight: bold;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title::before {
+            content: "▸";
+            margin-right: 8px;
+            color: #667eea;
+        }
+        
+        .section-content {
+            color: #4a5568;
+            padding-left: 20px;
+        }
+        
+        .pros {
+            color: #38a169;
+        }
+        
+        .cons {
+            color: #e53e3e;
+        }
+        
+        .frequency {
+            background: #edf2f7;
+            padding: 8px 12px;
+            border-radius: 5px;
+            display: inline-block;
+            font-family: monospace;
+            font-weight: bold;
+            color: #2d3748;
+        }
+        
+        .use-case {
+            background: #bee3f8;
+            padding: 8px 12px;
+            border-radius: 5px;
+            margin-top: 5px;
+            display: inline-block;
+        }
+        
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        ul li {
+            padding: 5px 0;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        ul li::before {
+            content: "•";
+            position: absolute;
+            left: 5px;
+            font-weight: bold;
+        }
+        
+        .pros li::before {
+            color: #38a169;
+        }
+        
+        .cons li::before {
+            color: #e53e3e;
+        }
+        
+        .note {
+            background: #fef5e7;
+            border-left: 4px solid #f39c12;
+            padding: 15px;
+            margin-top: 30px;
+            border-radius: 5px;
+        }
+        
+        .note-title {
+            font-weight: bold;
+            color: #f39c12;
+            margin-bottom: 8px;
+        }
+        
+        .driver-recommendation {
+            background: #e8f5e9;
+            padding: 10px;
+            border-radius: 5px;
+            margin-top: 8px;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔊 Subwoofer Design Comparison Guide</h1>
+        <p class="subtitle">Comprehensive analysis of DIY subwoofer cabinet designs for live sound applications</p>
+
+        <div class="speaker-card">
+            <div class="speaker-name">TH1821</div>
+            <div class="section">
+                <div class="section-title">Frequency Response</div>
+                <div class="section-content">
+                    <span class="frequency">Below 40Hz capable</span>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Material Requirements</div>
+                <div class="section-content">~1.5 sheets of plywood (one small panel requires a third sheet or half-sheet)</div>
+            </div>
+            <div class="section">
+                <div class="section-title">Pros</div>
+                <div class="section-content pros">
+                    <ul>
+                        <li>Easy to build</li>
+                        <li>High output</li>
+                        <li>Low enough for most applications</li>
+                        <li>Minimal angled cuts</li>
+                        <li>Only one bracing piece requires additional material</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Cons</div>
+                <div class="section-content cons">
+                    <ul>
+                        <li>Requires a small amount from a third sheet</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Recommended Driver</div>
+                <div class="section-content">
+                    <div class="driver-recommendation">B&C 21DS115</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="speaker-card">
+            <div class="speaker-name">Bass Reflex (Generic)</div>
+            <div class="section">
+                <div class="section-title">Frequency Response</div>
+                <div class="section-content">
+                    <span class="frequency">Tunable to any frequency (35Hz mentioned as example)</span>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Pros</div>
+                <div class="section-content pros">
+                    <ul>
+                        <li>Simple construction</li>
+                        <li>Compact dimensions</li>
+                        <li>Phase linearity</li>
+                        <li>Good bandwidth</li>
+                        <li>No angled cuts required</li>
+                        <li>Easy to design for any tuning frequency</li>
+                        <li>Better efficiency with modern drivers</li>
+                        <li>More economical than horn designs</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Cons</div>
+                <div class="section-content cons">
+                    <ul>
+                        <li>Lower output compared to horn-loaded designs</li>
+                        <li>Less sensitivity than tapped horns</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Use Cases</div>
+                <div class="section-content">
+                    <span class="use-case">Best for smaller/mobile systems where simplicity is prioritized</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="speaker-card">
+            <div class="speaker-name">Keystone</div>
+            <div class="section">
+                <div class="section-title">Type</div>
+                <div class="section-content">Tapped Horn</div>
+            </div>
+            <div class="section">
+                <div class="section-title">Pros</div>
+                <div class="section-content pros">
+                    <ul>
+                        <li>Straightforward to build</li>
+                        <li>Good low frequency performance</li>
+                        <li>Good performance without complicated cuts</li>
+                        <li>Higher output than bass reflex</li>
+                        <li>Solid choice overall</li>
+                        <li>Simpler angle cuts compared to other tapped horns</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Cons</div>
+                <div class="section-content cons">
+                    <ul>
+                        <li>Taller and "tippy" - less stable than some alternatives</li>
+                        <li>Not ideal for outdoor gigs or lively crowds leaning on them</li>
+                        <li>Requires more precise cutting than simple ported designs</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Use Cases</div>
+                <div class="section-content">
+                    <span class="use-case">House and Techno</span>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Cost</div>
+                <div class="section-content">
+                    Approximately $900 USD per cabinet (fully built)
+                </div>
+            </div>
+        </div>
+
+        <div class="speaker-card">
+            <div class="speaker-name">XOC1 TH-18 / TH18 MK2</div>
+            <div class="section">
+                <div class="section-title">Type</div>
+                <div class="section-content">Tapped Horn (18" driver)</div>
+            </div>
+            <div class="section">
+                <div class="section-title">Pros</div>
+                <div class="section-content pros">
+                    <ul>
+                        <li>Deeper and not as tall as Keystone - more stable platform</li>
+                        <li>Better form factor for stacking</li>
+                        <li>More stable for outdoor gigs</li>
+                        <li>Better stability with lively crowds</li>
+                        <li>Higher output than bass reflex</li>
+                        <li>Fairly straightforward build</li>
+                        <li>Excellent for free parties</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Cons</div>
+                <div class="section-content cons">
+                    <ul>
+                        <li>Requires accurate angle cuts (60.6°, 65.8°, 67.5° mentioned)</li>
+                        <li>Difficult with basic circular saw - track saw recommended</li>
+                        <li>Decimal angle measurements can be challenging</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Build Tips</div>
+                <div class="section-content">
+                    <ul>
+                        <li>Use a track saw for accurate cuts</li>
+                        <li>Create templates from 6mm ply for internal layout</li>
+                        <li>Use polyurethane expanding glue for more forgiving assembly</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Use Cases</div>
+                <div class="section-content">
+                    <span class="use-case">Free parties, outdoor events, techno</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="speaker-card">
+            <div class="speaker-name">Cubo Series (Cubo18)</div>
+            <div class="section">
+                <div class="section-title">Frequency Response</div>
+                <div class="section-content">
+                    <span class="frequency">NOT recommended for sub-40Hz work</span>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Pros</div>
+                <div class="section-content pros">
+                    <ul>
+                        <li>Affordable and scalable design</li>
+                        <li>Consistently good feedback</li>
+                        <li>Active designer in forums</li>
+                        <li>Uncomplicated build</li>
+                        <li>Requires little wood</li>
+                        <li>Plays loud</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Cons</div>
+                <div class="section-content cons">
+                    <ul>
+                        <li>Too small for some applications (height)</li>
+                        <li>Can cause ear-piercing issues when tops are mounted low</li>
+                        <li>Sometimes overhyped</li>
+                        <li>Design can be refined</li>
+                        <li>Frequency response has hump - doesn't sit flat</li>
+                        <li>Two subs alone don't provide proper bass</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Note</div>
+                <div class="section-content">
+                    Popular for kicks/mid-bass, but subwoofer version has limitations. May require stacking multiple units for adequate height.
+                </div>
+            </div>
+        </div>
+
+        <div class="speaker-card">
+            <div class="speaker-name">MHT4564 / MHB46</div>
+            <div class="section">
+                <div class="section-title">Frequency Response</div>
+                <div class="section-content">
+                    <span class="frequency">MHB46: Doesn't go very deep</span>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Cons</div>
+                <div class="section-content cons">
+                    <ul>
+                        <li>MHB46 lacks deep bass extension</li>
+                        <li>May not meet requirements for sub-40Hz performance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="speaker-card">
+            <div class="speaker-name">MTH4654 (21" version)</div>
+            <div class="section">
+                <div class="section-title">Type</div>
+                <div class="section-content">Tapped Horn (21" driver)</div>
+            </div>
+            <div class="section">
+                <div class="section-title">Frequency Response</div>
+                <div class="section-content">
+                    <span class="frequency">35Hz</span>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Material Requirements</div>
+                <div class="section-content">Just over 2 sheets of plywood per cabinet</div>
+            </div>
+            <div class="section">
+                <div class="section-title">Pros</div>
+                <div class="section-content pros">
+                    <ul>
+                        <li>Relatively simple build compared to other tapped horns</li>
+                        <li>Sounds great</li>
+                        <li>Good output</li>
+                        <li>Only a couple of angled cuts</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Cons</div>
+                <div class="section-content cons">
+                    <ul>
+                        <li>Requires slightly more than 2 sheets (wastage issue for single cab build)</li>
+                        <li>Still has some angled cuts</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Use Cases</div>
+                <div class="section-content">
+                    <span class="use-case">Good for jungle, hardtek, gabber, trance</span>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Note</div>
+                <div class="section-content">
+                    Building 4 units helps use materials more efficiently
+                </div>
+            </div>
+        </div>
+
+        <div class="speaker-card">
+            <div class="speaker-name">B&C Sub18</div>
+            <div class="section">
+                <div class="section-title">Type</div>
+                <div class="section-content">Bass Reflex (Ported)</div>
+            </div>
+            <div class="section">
+                <div class="section-title">Frequency Response</div>
+                <div class="section-content">
+                    <span class="frequency">35Hz reflex tuning</span>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Material Requirements</div>
+                <div class="section-content">Just 1 sheet of plywood</div>
+            </div>
+            <div class="section">
+                <div class="section-title">Pros</div>
+                <div class="section-content pros">
+                    <ul>
+                        <li>No angled cuts</li>
+                        <li>Lots of driver options</li>
+                        <li>Most economical material usage</li>
+                        <li>Simple construction</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="speaker-card">
+            <div class="speaker-name">SKRAM</div>
+            <div class="section">
+                <div class="section-title">Type</div>
+                <div class="section-content">Ported Horn</div>
+            </div>
+            <div class="section">
+                <div class="section-title">Frequency Response</div>
+                <div class="section-content">
+                    <span class="frequency">F3: 29Hz (all ports open) | 25Hz (1 port plugged) | 21Hz (2 ports plugged) | 16Hz (3 ports plugged)</span>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Pros</div>
+                <div class="section-content pros">
+                    <ul>
+                        <li>Smallest ported horn design</li>
+                        <li>Multiple driver options</li>
+                        <li>No need for separate kick bin</li>
+                        <li>Extremely versatile tuning options via port plugging</li>
+                        <li>Crazy chest punch and slam in 50-130Hz range</li>
+                        <li>One sub has more output than pair of many other designs</li>
+                        <li>Excellent down to 30Hz</li>
+                        <li>Good CNC plans available</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Cons</div>
+                <div class="section-content cons">
+                    <ul>
+                        <li>More expensive drivers required</li>
+                        <li>More complex build</li>
+                        <li>Higher wood usage than simpler designs</li>
+                        <li>Output decreases when ports are plugged for deeper tuning</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Use Cases</div>
+                <div class="section-content">
+                    <span class="use-case">Jungle, Drum & Bass, applications requiring extreme versatility</span>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Note</div>
+                <div class="section-content">
+                    Available on jwsound.live - considered one of the most versatile subwoofer designs available
+                </div>
+            </div>
+        </div>
+
+        <div class="speaker-card">
+            <div class="speaker-name">Compact 21" Ported (Custom Design)</div>
+            <div class="section">
+                <div class="section-title">Type</div>
+                <div class="section-content">Bass Reflex (Ported)</div>
+            </div>
+            <div class="section">
+                <div class="section-title">Frequency Response</div>
+                <div class="section-content">
+                    <span class="frequency">Tuned to 26Hz, cut at 34Hz with slow rolloff</span>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Dimensions</div>
+                <div class="section-content">
+                    57.3 x 57.3 x 69.5 cm (compact even for an 18" sub)
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Pros</div>
+                <div class="section-content pros">
+                    <ul>
+                        <li>Very compact for a 21" driver</li>
+                        <li>Rides impedance peak with minimal power compression</li>
+                        <li>Excellent efficiency</li>
+                        <li>Works beautifully according to builder</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Note</div>
+                <div class="section-content">
+                    Custom design - demonstrates advantages of optimized ported boxes with modern drivers
+                </div>
+            </div>
+        </div>
+
+        <div class="speaker-card">
+            <div class="speaker-name">Paraflex O CRAM / Type O Classic V2</div>
+            <div class="section">
+                <div class="section-title">Type</div>
+                <div class="section-content">Paraflex Design</div>
+            </div>
+            <div class="section">
+                <div class="section-title">Pros</div>
+                <div class="section-content pros">
+                    <ul>
+                        <li>Simple structure</li>
+                        <li>Reputation for being punchy</li>
+                        <li>Works with variety of drivers</li>
+                        <li>Good alternative to Cubo for those seeking different performance</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Resources</div>
+                <div class="section-content">
+                    Available at hoqs.com.au
+                </div>
+            </div>
+        </div>
+
+        <div class="speaker-card">
+            <div class="speaker-name">C2E ELF</div>
+            <div class="section">
+                <div class="section-title">Note</div>
+                <div class="section-content">
+                    Mentioned as a good design option, particularly for compact efficient systems
+                </div>
+            </div>
+        </div>
+
+        <div class="speaker-card">
+            <div class="speaker-name">Skorn</div>
+            <div class="section">
+                <div class="section-title">Type</div>
+                <div class="section-content">Horn Design</div>
+            </div>
+            <div class="section">
+                <div class="section-title">Pros</div>
+                <div class="section-content pros">
+                    <ul>
+                        <li>Top notch design by all accounts</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Resources</div>
+                <div class="section-content">
+                    Plans hosted on jwsound.live
+                </div>
+            </div>
+        </div>
+
+        <div class="speaker-card">
+            <div class="speaker-name">BFM Titan 48</div>
+            <div class="section">
+                <div class="section-title">Note</div>
+                <div class="section-content">
+                    User reports being "very happy" with wall of bass from 12 units
+                </div>
+            </div>
+        </div>
+
+        <div class="speaker-card">
+            <div class="speaker-name">Bill Fitzmaurice Designs</div>
+            <div class="section">
+                <div class="section-title">Frequency Response</div>
+                <div class="section-content">
+                    <span class="frequency">Even 12" cabs hitting 30Hz</span>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Pros</div>
+                <div class="section-content pros">
+                    <ul>
+                        <li>Gets very low frequencies</li>
+                        <li>Multiple sizes available</li>
+                        <li>Good reputation</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="speaker-card">
+            <div class="speaker-name">X1</div>
+            <div class="section">
+                <div class="section-title">Pros</div>
+                <div class="section-content pros">
+                    <ul>
+                        <li>Incredibly easy to build</li>
+                        <li>Fairly scalable</li>
+                        <li>Push serious air</li>
+                        <li>Good performance</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Cons</div>
+                <div class="section-content cons">
+                    <ul>
+                        <li>Not recommended to stack more than 2 high</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="section">
+                <div class="section-title">Use Cases</div>
+                <div class="section-content">
+                    <span class="use-case">UK free party scene (used by Intrusive Audio, Detrimental, Moorsoundz, RKC)</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="speaker-card">
+            <div class="speaker-name">TH118XL (Danley Sound Labs)</div>
+            <div class="section">
+                <div class="section-title">Type</div>
+                <div class="section-content">Tapped Horn (Commercial/Professional)</div>
+            </div>
+            <div class="section">
+                <div class="section-title">Note</div>
+                <div class="section-content">
+                    Professional commercial version - referenced as aspirational product. DIY builders attempt to replicate performance with similar tapped horn designs.
+                </div>
+            </div>
+        </div>
+
+        <div class="speaker-card">
+            <div class="speaker-name">HOGs</div>
+            <div class="section">
+                <div class="section-title">Material Requirements</div>
+                <div class="section-content">Approximately 2.5 sheets</div>
+            </div>
+            <div class="section">
+                <div class="section-title">Cons</div>
+                <div class="section-content cons">
+                    <ul>
+                        <li>Too complicated for beginner/intermediate builders</li>
+                        <li>High material usage</li>
+                        <li>Complex construction</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="note">
+            <div class="note-title">⚠️ General Notes from Discussion:</div>
+            <ul>
+                <li><strong>Scoops:</strong> Get "boomy" and muddy at high BPM. Great for reggae, dub, and dubstep, but not ideal for fast genres like jungle, hardtek, or gabber.</li>
+                <li><strong>Horn vs. Ported Trade-offs:</strong> Horns offer higher output but come with compromises in complexity, size, phase response, and cost. Modern drivers have reduced the advantage horns once had.</li>
+                <li><strong>Driver Recommendations:</strong> B&C 21DS115 and B&C 18DS115-4 frequently mentioned as quality choices.</li>
+                <li><strong>Build Considerations:</strong> Track saws greatly improve accuracy for angled cuts. Templates and polyurethane expanding glue help with assembly tolerances.</li>
+                <li><strong>Music Genre Considerations:</strong> Hardtek and gabber favor folded horns, while bass-heavy genres like dub can work well with properly tuned ported designs.</li>
+            </ul>
+        </div>
+
+    </div>
+</body>
+</html>
